@@ -46,8 +46,9 @@ class PaginationType
     public function infoFieldName(): string
     {
         return match ($this->type) {
-            self::PAGINATOR, self::SIMPLE => 'paginatorInfo',
-            self::CONNECTION => 'pageInfo',
+            self::PAGINATOR => config('lighthouse.pagination.info_fields_name.paginator', 'paginatorInfo'),
+            self::SIMPLE => config('lighthouse.pagination.info_fields_name.simple', 'pageInfo'),
+            self::CONNECTION => config('lighthouse.pagination.info_fields_name.connection', 'paginatorInfo'),
             default => throw new \Exception("infoFieldName is not implemented for pagination type: {$this->type}."),
         };
     }

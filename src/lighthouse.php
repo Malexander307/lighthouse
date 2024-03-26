@@ -211,6 +211,12 @@ return [
          * Setting this to `null` means the count is unrestricted.
          */
         'max_count' => null,
+
+        'info_fields_name' => [
+            'paginator' => 'paginatorInfo',
+            'simple' => 'paginatorInfo',
+            'connection' => 'pageInfo',
+        ]
     ],
 
     /*
